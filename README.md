@@ -1,8 +1,9 @@
 # Custom Inkeep Slackbot with Node.js and Vercel
 
-This is an example repo on how to deploy your own fully customizble Slackbot that uses Inkeep.
+An example repo on how to deploy your own fully customizable Slackbot that uses Inkeep.
 
-To add the official Inkeep Slackbot to your workspace, you can instead follow these docs here [https://docs.inkeep.com/integrations/slack/community](https://docs.inkeep.com/integrations/slack/community).
+> [!NOTE] 
+> To add the official Inkeep Slackbot to your workspace, you can instead follow these docs here [https://docs.inkeep.com/integrations/slack/community](https://docs.inkeep.com/integrations/slack/community).
 
 ### Environment Variables
 
@@ -60,8 +61,9 @@ After successfully deploying the app, go to [Slack API Apps Page](https://api.sl
   - Click **Save Changes**.
 - Slack requires you to reinstall the app to apply the changes.
 
-## Customize the Slackbot
+### Customize the Slackbot
 
+- Go to [Slack API Apps Page](https://api.slack.com/apps) and select your app
 - Go to Basic Information
 - Under the Display Information section, you can edit the App name, Short description, App icon & Preview, Background color, and the Long description.
 
