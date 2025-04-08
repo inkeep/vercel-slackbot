@@ -32,7 +32,6 @@ export async function POST(request: Request) {
       const eventType = body.event.type
       if (eventType === 'app_mention') {
         console.log('app_mention', body.event)
-        await immediateGPTResponse(body.event)
         await sendGPTResponse(body.event) 
         return new Response('Success!', { status: 200 })
       }
