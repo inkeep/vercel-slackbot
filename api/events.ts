@@ -30,22 +30,23 @@ export async function POST(request: Request) {
   if (await isValidSlackRequest(request, body)) {
     if (requestType === 'event_callback') {
       const eventType = body.event.type
-      // if (eventType === 'app_mention') {
-      //   console.log('app_mention', body.event)
-      //   await sendGPTResponse(body.event) 
-      //   return new Response('Success!', { status: 200 })
-      // }
-
       if (eventType === 'app_mention') {
+        // console.log('app_mention', body.event)
+        // await sendGPTResponse(body.event) 
+        // return new Response('Success!', { status: 200 })
+
         console.log('app_mention', body.event)
+        
+        // Start the GPT response process
+        const gptPromise = sendGPTResponse(body.event)
+        
+        // Return immediate success response
         const response = new Response('Success!', { status: 200 })
         
-        Promise.resolve().then(() => {
-          return sendGPTResponse(body.event)
-        }).catch(error => {
-          console.error('Error sending GPT response:', error)
-        })
-
+        // Ensure the function keeps running until GPT response completes
+        response.headers.set('Connection', 'keep-alive')
+        gptPromise.catch(error => console.error('Error:', error))
+        
         return response
       }
     }
