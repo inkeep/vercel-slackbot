@@ -1,6 +1,8 @@
-# Inkeep Slackbot with Node.js and Vercel
+# Custom Inkeep Slackbot with Node.js and Vercel
 
-This is a Slackbot you can ask questions and get answers from Inkeep.
+This is an example repo on how to deploy your own fully customizble Slackbot that uses Inkeep.
+
+To add the official Inkeep Slackbot to your workspace, you can instead follow these docs here [https://docs.inkeep.com/integrations/slack/community](https://docs.inkeep.com/integrations/slack/community).
 
 ### Environment Variables
 
