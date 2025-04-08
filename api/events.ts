@@ -40,12 +40,12 @@ export async function POST(request: Request) {
         console.log('app_mention', body.event)
         const response = new Response('Success!', { status: 200 })
         
-        setImmediate(() => {
-          sendGPTResponse(body.event).catch(error => {
-            console.error('Error sending GPT response:', error)
-          })
+        Promise.resolve().then(() => {
+          return sendGPTResponse(body.event)
+        }).catch(error => {
+          console.error('Error sending GPT response:', error)
         })
-        
+
         return response
       }
     }
