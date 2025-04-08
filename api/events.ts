@@ -32,7 +32,9 @@ export async function POST(request: Request) {
       const eventType = body.event.type
       if (eventType === 'app_mention') {
         console.log('app_mention', body.event)
-        void sendGPTResponse(body.event)
+         sendGPTResponse(body.event).catch(error => {
+          console.error('Error sending GPT response:', error)
+        })
         return new Response('Success!', { status: 200 })
       }
     }
