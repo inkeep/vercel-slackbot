@@ -12,7 +12,6 @@ After completing the setup instructions below, you will have the following `.env
 INKEEP_API_KEY=
 SLACK_BOT_TOKEN=
 SLACK_SIGNING_SECRET=
-SLACK_ADMIN_MEMBER_ID=
 ```
 
 #### Inkeep API Key
