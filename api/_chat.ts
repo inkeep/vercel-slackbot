@@ -21,7 +21,7 @@ export async function sendGPTResponse(event: Event) {
 
 		await slack.chat.postMessage({
 			channel,
-			thread_ts: thread_ts ?? ts,
+			thread_ts: ts,
 			text: `Hello, I'm a bot. I'm here to help you with your questions.`,
 		});
 
