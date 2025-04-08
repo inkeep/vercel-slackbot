@@ -32,6 +32,7 @@ export async function sendGPTResponse(event: Event) {
 			channel,
 			thread_ts: ts,
 			text: `${gptResponse.choices[0].message.content}`,
+			mrkdwn: true,
 		});
 	} catch (error) {
 		if (error instanceof Error) {
