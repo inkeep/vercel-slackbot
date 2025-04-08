@@ -1,22 +1,22 @@
-# OpenAI Slackbot with Node.js
+# Inkeep Slackbot with Node.js and Vercel
 
-This is a Slackbot you can ask questions and get answers from OpenAI's GPT model.
+This is a Slackbot you can ask questions and get answers from Inkeep.
 
 ### Environment Variables
 
 After completing the setup instructions below, you will have the following `.env` file in your project for testing locally, and the same environment variables added on Vercel:
 
 ```bash
-OPENAI_API_KEY=
+INKEEP_API_KEY=
 SLACK_BOT_TOKEN=
 SLACK_SIGNING_SECRET=
 SLACK_ADMIN_MEMBER_ID=
 ```
 
-#### OpenAI API Key
+#### Inkeep API Key
 
-- Create a new key on [OpenAI API Keys](https://platform.openai.com/api-keys) and "Create new secret key", optionally naming the key.
-- Add the key to Vercel's environment variables as `OPENAI_API_KEY`.
+- Create a new api integration([[https://portal.inkeep.com](https://portal.inkeep.com)](https://portal.inkeep.com/)).
+- Add the key to Vercel's environment variables as `INKEEP_API_KEY`.
 
 #### Slack Bot Token & Signing Secret
 
