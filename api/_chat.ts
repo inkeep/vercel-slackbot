@@ -9,6 +9,26 @@ type Event = {
   thread_ts?: string
 }
 
+export async function immediateGPTResponse(event: Event) {
+  const { channel, ts } = event
+
+  try {
+    await slack.chat.postMessage({
+      channel,
+      thread_ts: ts,
+      text: `Hello, I'm a bot. I'm here to help you with your questions.`,
+    })
+  } catch (error) {
+    if (error instanceof Error) {
+      await slack.chat.postMessage({
+        channel,
+        thread_ts: ts,
+        text: `<@${process.env.SLACK_ADMIN_MEMBER_ID}> Error: ${error.message}`,
+      })
+    }
+  }
+}
+
 export async function sendGPTResponse(event: Event) {
   const { channel, ts, thread_ts } = event
 
