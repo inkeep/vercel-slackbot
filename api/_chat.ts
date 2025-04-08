@@ -21,16 +21,9 @@ export async function sendGPTResponse(event: Event) {
 
 		await slack.chat.postMessage({
 			channel,
-			thread_ts: ts,
 			text: `Hello, I'm a bot. I'm here to help you with your questions.`,
-		}).catch(error => {
-			console.error('Slack API Error:', {
-				message: error.message,
-				error: JSON.stringify(error, null, 2),
-				channel,
-				ts
-			});
-		});
+			...(thread_ts ? { thread_ts } : {}),
+		})
 
 		const prompts = await generatePromptFromThread(thread);
 		const gptResponse = await getGPTResponse(prompts);
@@ -42,14 +35,12 @@ export async function sendGPTResponse(event: Event) {
 			mrkdwn: true,
 		});
 	} catch (error) {
-		if (error instanceof Error) {
-			console.error('Slack API Error:', {
-                message: error.message,
-                error: JSON.stringify(error, null, 2),
-                channel,
-                thread_ts,
-				ts
-            });
-		}
+		console.error('Slack API Error:', {
+            message: error instanceof Error ? error.message : 'Unknown error',
+            error: JSON.stringify(error, null, 2),
+            channel,
+            ts,
+            thread_ts,
+        });
 	}
 }
