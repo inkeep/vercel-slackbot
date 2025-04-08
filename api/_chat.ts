@@ -35,11 +35,7 @@ export async function sendGPTResponse(event: Event) {
 		});
 	} catch (error) {
 		if (error instanceof Error) {
-			await slack.chat.postMessage({
-				channel,
-				thread_ts: ts,
-				text: `<@${process.env.SLACK_ADMIN_MEMBER_ID}> Error: ${error.message}`,
-			});
+			console.error(error.message);
 		}
 	}
 }
