@@ -15,7 +15,13 @@ SLACK_ADMIN_MEMBER_ID=
 
 #### Inkeep API Key
 
-- Create a new api integration([[https://portal.inkeep.com](https://portal.inkeep.com)](https://portal.inkeep.com/)).
+- Log into the Inkeep dashboard at [https://portal.inkeep.com](https://portal.inkeep.com).
+- Navigate to the Projects section and select your project
+- Open the Integrations tab
+- Click Create Integration and choose API from the options (do not select Slack)
+- Enter a Name for your new API integration
+- Click on Create
+- A generated API key will appear
 - Add the key to Vercel's environment variables as `INKEEP_API_KEY`.
 
 #### Slack Bot Token & Signing Secret
