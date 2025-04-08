@@ -23,6 +23,13 @@ export async function sendGPTResponse(event: Event) {
 			channel,
 			thread_ts: ts,
 			text: `Hello, I'm a bot. I'm here to help you with your questions.`,
+		}).catch(error => {
+			console.error('Slack API Error:', {
+				message: error.message,
+				error: JSON.stringify(error, null, 2),
+				channel,
+				ts
+			});
 		});
 
 		const prompts = await generatePromptFromThread(thread);
