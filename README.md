@@ -65,6 +65,11 @@ After successfully deploying the app, go to [Slack API Apps Page](https://api.sl
   - Click **Save Changes**.
 - Slack requires you to reinstall the app to apply the changes.
 
+## Customize the Slackbot
+
+- Go to Basic Information
+- Under the Display Information section, you can edit the App name, Short description, App icon & Preview, Background color, and the Long description.
+
 ## Local Development
 
 Use the [Vercel CLI](https://vercel.com/docs/cli) and [localtunnel](https://github.com/localtunnel/localtunnel) to test out this project locally:
