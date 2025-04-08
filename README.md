@@ -46,12 +46,6 @@ Go to [Slack API Apps Page](https://api.slack.com/apps):
   - Basic Information --> App Credentials --> Copy **Signing Secret**
   - Add the secret to Vercel's environment variables as `SLACK_SIGNING_SECRET`
 
-#### Admin's Slack Member ID
-
-- Click on your profile picture in Slack and click **Profile**.
-- Click on the three dots in the middle right corner and select **Copy member ID**.
-- Add the ID to Vercel's environment variables as `SLACK_ADMIN_MEMBER_ID`.
-
 ### Enable Slack Events
 
 After successfully deploying the app, go to [Slack API Apps Page](https://api.slack.com/apps) and select your app:
