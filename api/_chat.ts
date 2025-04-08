@@ -35,7 +35,12 @@ export async function sendGPTResponse(event: Event) {
 		});
 	} catch (error) {
 		if (error instanceof Error) {
-			console.error(error.message);
+			console.error('Slack API Error:', {
+                message: error.message,
+                error: JSON.stringify(error, null, 2),
+                channel,
+                thread_ts: ts
+            });
 		}
 	}
 }
