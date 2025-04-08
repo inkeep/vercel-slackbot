@@ -19,11 +19,11 @@ export async function sendGPTResponse(event: Event) {
 			inclusive: true,
 		});
 
-		await slack.chat.postMessage({
-			channel,
-			thread_ts: ts,
-			text: `Hello, I'm a bot. I'm here to help you with your questions.`,
-		});
+		// await slack.chat.postMessage({
+		// 	channel,
+		// 	thread_ts: ts,
+		// 	text: `Hello, I'm a bot. I'm here to help you with your questions.`,
+		// });
 
 		const prompts = await generatePromptFromThread(thread);
 		const gptResponse = await getGPTResponse(prompts);
