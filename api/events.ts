@@ -1,8 +1,9 @@
 import crypto from 'crypto'
-import { immediateGPTResponse, sendGPTResponse } from './_chat'
+import { sendGPTResponse } from './_chat'
+import { waitUntil } from "@vercel/functions";
 
 export const config = {
-  maxDuration: 30,
+  maxDuration: 300,
 }
 
 async function isValidSlackRequest(request: Request, body: any) {
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
       const eventType = body.event.type
       if (eventType === 'app_mention') {
         console.log('app_mention', body.event)
-        await sendGPTResponse(body.event) 
+        waitUntil(sendGPTResponse(body.event))
         return new Response('Success!', { status: 200 })
       }
     }
