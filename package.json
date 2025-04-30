@@ -1,15 +1,6 @@
 {
-  "name": "ai-sdk-slack-chatbot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "slackbot",
+  "private": true,
   "dependencies": {
     "@inkeep/inkeep-analytics": "0.2.4-alpha.22",
     "@slack/bolt": "^4.2.1",
