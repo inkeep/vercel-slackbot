@@ -1,0 +1,13 @@
+{
+	"integration": {
+		"botAvatarSrcUrl": "",
+		"botName": "Ask Inkeep",
+		"negativeFeedbackCallback": {
+			"userIds": [],
+			"groupIds": [],
+			"botIds": []
+		},
+		"areInlineCitationsEnabled": true
+	},
+	"customStrings": {}
+}
