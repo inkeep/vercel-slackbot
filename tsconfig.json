@@ -6,8 +6,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "resolveJsonModule": true,
   },
-  "exclude": ["node_modules"],
-  "include": ["api"]
+  "exclude": [
+    "node_modules",
+  ],
+  "include": [
+    "api"
+  ]
 }

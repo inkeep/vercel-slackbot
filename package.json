@@ -1,13 +1,28 @@
 {
-  "name": "slackbot",
-  "private": true,
+  "name": "ai-sdk-slack-chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@slack/web-api": "7.0.1",
+    "@inkeep/inkeep-analytics": "0.2.4-alpha.22",
+    "@slack/bolt": "^4.2.1",
+    "@slack/web-api": "^7.0.2",
     "@vercel/functions": "^2.0.0",
-    "openai": "4.26.0"
+    "emoji-regex": "^10.4.0",
+    "openai": "^4.96.1",
+    "slackify-markdown": "^4.4.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
   },
   "devDependencies": {
-    "@types/node": "20.11.16",
-    "typescript": "5.3.3"
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
   }
 }
